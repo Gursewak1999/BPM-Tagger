@@ -35,4 +35,4 @@ jobs:
           context: .
           platforms: linux/arm64
           push: true
-          tags: ghcr.io/Gursewak1999/bpm-tagger:arm64
+          tags: ghcr.io/gursewak1999/bpm-tagger:arm64
