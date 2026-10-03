@@ -40,7 +40,9 @@ COPY requirements.txt requirements-core.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install essentia (pre-release); non-fatal — code falls back gracefully if unavailable
-RUN pip install --no-cache-dir --pre essentia || echo "WARNING: essentia not available, falling back to two-detector mode"
+# RUN pip install --no-cache-dir --pre essentia || echo "WARNING: essentia not available, falling back to two-detector mode"
+RUN pip install --no-cache-dir --pre essentia \
+    && python -c "import essentia; print('Essentia:', essentia.__version__)"
 
 # Application code, ordered least- to most-frequently changed so a release
 # invalidates as few layers as possible. VERSION and CHANGELOG.md change on
