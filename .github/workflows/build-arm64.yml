@@ -36,3 +36,5 @@ jobs:
           platforms: linux/arm64
           push: true
           tags: ghcr.io/gursewak1999/bpm-tagger:arm64
+          build-args: |
+            WITH_DEEPRHYTHM=true
